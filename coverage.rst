@@ -92,6 +92,9 @@ On Unix run::
     source ../cpython-venv/bin/activate
     pip install coverage
 
+Installing via pip requires the optional dependency libssl-dev. See the
+:ref:`build-dependencies` section.
+
 On :ref:`most <mac-python.exe>` Mac OS X systems run::
 
     ./python.exe -m venv ../cpython-venv
@@ -207,8 +210,8 @@ C extension is installed. You can check this with::
   ./python COVERAGEDIR --version
 
 If it says 'without C extension', then you will need to build the C extension.
-Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython 
-is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py 
+Assuming that coverage.py's clone is at ``COVERAGEDIR`` and your clone of CPython
+is at ``CPYTHONDIR``, you can do this by executing the following in your coverage.py
 clone::
 
   CPPFLAGS="-I CPYTHONDIR -I CPYTHONDIR/Include" CPYTHONDIR/python setup.py build_ext --inplace
